@@ -44,3 +44,6 @@ def convert_to_onnx(model_path, output_path):
 
     with th.no_grad():
         print(model.actor(th.as_tensor(observation), deterministic=True))
+
+
+convert_to_onnx(model_path="models/sac_model_gamma_95.zip", output_path="models/sac_model_gamma_95.onnx")
