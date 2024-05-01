@@ -1,0 +1,16 @@
+/venv/
+/progress/.ipynb_checkpoints/
+/AI Spyder/Library/
+/AI Spyder/.vs/
+/AI Spyder/Logs/
+/AI Spyder/obj/
+/AI Spyder/Packages/
+/AI Spyder/ProjectSettings/
+/AI Spyder/spyder_walker/
+/AI Spyder/spyder_walker_linux/
+/AI Spyder/UserSettings/
+/AI Spyder/.vsconfig
+/AI Spyder/AI Spyder.sln
+/AI Spyder/Assembly-CSharp.csproj
+/AI Spyder/Spyder.unitypackage
+/AI Spyder/spyder_walker_linux.zip
