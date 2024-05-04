@@ -29,7 +29,7 @@ The spider's goal is to move forward as quickly as possible.
 
 Rforward | Rside | Rfail
 --- | --- | ---
-If the speed in the forward direction _speed_forward_ is greater than 0.1, then equal _speed_forward_ else _speed_forward - 0.1_ | If the magnitude of the side shift is greater than 2, then equal _0.5_ else _0_ | If the robot's head is in contact with the floor, then equal _-4_ else _0_
+If the speed in the forward direction _speed_forward_ is greater than 0.1, then equal **_speed_forward_** else **_speed_forward - 0.1_** | If the magnitude of the side shift is greater than 2, then equal **_-0.5_** else **_0_** | If the robot's head is in contact with the floor, then equal **_-4_** else **_0_**
 
 Sum reward:
 
