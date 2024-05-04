@@ -27,17 +27,8 @@ The spider's goal is to move forward as quickly as possible.
 
 ### Reward function:
 
-If the speed in the forward direction speed_forward is greater than 0.1, then 
-
-**Rforward = speed_forward** , 
-
-otherwise 
-
-**Rforward = speed_forward - 0.1**
-
-If the magnitude of the lateral velocity is greater than 2, **Rside = -0.5**
-
-If the robot's head is in contact with the floor, **Rfail = -4** (and also the episode ends)
+Rforward | Rside | Rfail
+If the speed in the forward direction _speed_forward_ is greater than 0.1, then equal _speed_forward_ else _speed_forward - 0.1_ | If the magnitude of the side shift is greater than 2, then equal _0.5_ else _0_ | If the robot's head is in contact with the floor, then equal _-4_ else _0_
 
 Sum reward:
 
