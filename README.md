@@ -12,7 +12,7 @@ Despite its cartoonish appearance, the spider's gait is not controlled by animat
 
 The environment is a spider robot with four legs - three motors (rotating joint) on each. In this configuration, the middle joint of each leg is fictitious (the rotation limit is set to 0 degrees) for visual demonstration and faster training. But it is possible to change the restrictions for all joints.
 
-<img width="400" height="400" src="media/joints.png">
+<img width="300" height="300" src="media/joints.png">
 
 The spider's goal is to move forward as quickly as possible.
 
@@ -37,7 +37,16 @@ Sum reward:
 
 **R = Rforward + Rside + Rfail**
 
-<img width="400" height="400" src="media/spyder.png">
+<img width="300" height="300" src="media/spyder.png">
+
+## Train Agent
+
+The agent was trained using the Gym Environment using StableBaselines3. The necessary functions for training are presented in the [learn.py](learn.py) file, and for testing in [test.py](test.py). Several values of the discounting parameter were examined, since for the locomotion task, due to its periodicity, looking too far ahead may not have made sense.
+
+<img width="300" height="300" src="media/progress.png">
+
+Next, the deterministic policy was saved in the [onnx](https://onnx.ai/) format for use in Unity.
+
 
 
 
