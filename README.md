@@ -17,17 +17,23 @@ The environment is a spider robot with four legs - three motors (rotating joint)
 The spider's goal is to move forward as quickly as possible.
 
 
-#### Observation space:
+### Observation space:
 
 36 values - angle velocity and position for each 12 joints as well as 6 coordinates and 6 velocities (position and Euler angle) for robot head.
 
-#### Action space:
+### Action space:
 
 12 values - discrete direction of movement for each rotating joint: -1 for moving backward, 0 for standing still and 1 for moving forward.
 
-#### Reward function:
+### Reward function:
 
-If the speed in the forward direction speed_forward is greater than 0.1, then **Rforward = speed_forward**, otherwise **Rforward = speed_forward - 0.1**
+If the speed in the forward direction speed_forward is greater than 0.1, then 
+
+**Rforward = speed_forward** , 
+
+otherwise 
+
+**Rforward = speed_forward - 0.1**
 
 If the magnitude of the lateral velocity is greater than 2, **Rside = -0.5**
 
