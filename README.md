@@ -12,7 +12,10 @@ Despite its cartoonish appearance, the spider's gait is not controlled by animat
 
 The environment is a spider robot with four legs - three motors (rotating joint) on each. In this configuration, the middle joint of each leg is fictitious (the rotation limit is set to 0 degrees) for visual demonstration and faster training. But it is possible to change the restrictions for all joints.
 
+<img width="400" height="400" src="media/joints.png">
+
 The spider's goal is to move forward as quickly as possible.
+
 
 #### Observation space:
 
@@ -33,6 +36,8 @@ If the robot's head is in contact with the floor, **Rfail = -4** (and also the e
 Sum reward:
 
 **R = Rforward + Rside + Rfail**
+
+<img width="400" height="400" src="media/spyder.png">
 
 
 
