@@ -8,6 +8,9 @@ import numpy as np
 CONTINUOUS_ACTIONS_SIZE = 12
 
 
+# convert to Unity compatible format
+# it is work correctly only for SAC
+# for another models it is necessary to change code below
 class OnnxablePolicy(th.nn.Module):
     def __init__(self, actor: th.nn.Module):
         super().__init__()
