@@ -12,32 +12,39 @@ Despite its cartoonish appearance, the spider's gait is not controlled by animat
 
 The environment is a spider robot with four legs - three motors (rotating joint) on each. In this configuration, the middle joint of each leg is fictitious (the rotation limit is set to 0 degrees) for visual demonstration and faster training. But it is possible to change the restrictions for all joints.
 
-<img width="400" height="400" src="media/joints.png">
+<img width="300" height="300" src="media/joints.png">
 
 The spider's goal is to move forward as quickly as possible.
 
 
-#### Observation space:
+### Observation space:
 
 36 values - angle velocity and position for each 12 joints as well as 6 coordinates and 6 velocities (position and Euler angle) for robot head.
 
-#### Action space:
+### Action space:
 
 12 values - discrete direction of movement for each rotating joint: -1 for moving backward, 0 for standing still and 1 for moving forward.
 
-#### Reward function:
+### Reward function:
 
-If the speed in the forward direction speed_forward is greater than 0.1, then **Rforward = speed_forward**, otherwise **Rforward = speed_forward - 0.1**
-
-If the magnitude of the lateral velocity is greater than 2, **Rside = -0.5**
-
-If the robot's head is in contact with the floor, **Rfail = -4** (and also the episode ends)
+Rforward | Rside | Rfail
+--- | --- | ---
+If the speed in the forward direction _speed_forward_ is greater than 0.1, then equal **_speed_forward_** else **_speed_forward - 0.1_** | If the magnitude of the side shift is greater than 2, then equal **_-0.5_** else **_0_** | If the robot's head is in contact with the floor, then equal **_-4_** else **_0_**
 
 Sum reward:
 
 **R = Rforward + Rside + Rfail**
 
-<img width="400" height="400" src="media/spyder.png">
+<img width="300" height="300" src="media/spyder.png">
+
+## Train Agent
+
+The agent was trained using the Gym Environment using StableBaselines3. The necessary functions for training are presented in the [learn.py](learn.py) file, and for testing in [test.py](test.py). Several values of the discounting parameter were examined, since for the locomotion task, due to its periodicity, looking too far ahead may not have made sense.
+
+<img width="300" height="300" src="media/progress.png">
+
+Next, the deterministic policy was saved in the [onnx](https://onnx.ai/) format for use in Unity.
+
 
 
 
